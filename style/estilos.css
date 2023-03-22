@@ -14,7 +14,8 @@ h1 {
     font-weight: 700;
     font-size: 30px;
     color: red;
-    margin: 8px;
+    margin-left: 8px;
+    margin-top: 4px;
 }
 
 h2 {
@@ -30,5 +31,16 @@ p {
     font-weight: 400;
     font-size: 15px;
     margin-left: 8px;
+    color: white;
+}
+
+button {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    background-color: red;
     color: white;
 }
