@@ -1,45 +1,49 @@
-function iniciar() {
-    let bienvenida = confirm("Bienvenid@ al mundo del cine! Te gustaría escuchar sugerencias de los expertos? 🎥")
-    let respuesta = prompt("Durante tu tiempo libre, elegís pasar el rato mirando series o peliculas?:").toLowerCase().trim()
-    if (respuesta == "series") {
-        alert("Estas en el lugar correcto! Las series son fenomenales.👏🏻 Pronto te recomendaremos lo mejor de lo mejor😉")
-    } else {
-        alert("Estas en el lugar correcto! Las películas son fenomenales.👏🏻 Pronto te recomendaremos lo mejor de lo mejor😉")
+function buscar(id) {
+    let idProducto = productos.find((producto)=> producto.id === parseInt(id))
+    return idProducto
+}
+
+function finalizarCompra() {
+    if (carrito.length === 0) {
+        alert("El carrito se encuentra vacío.")
+        return
     }
-    let genero = prompt("Cual es su género favorito? \nTerror - Comedia - Ciencia Ficción - Romance - Acción - Drama - Suspenso - Fantasía - Musicales").toLowerCase().trim();
-    while (genero != "listo") {
-        switch (genero) {
-            case "terror":
-                alert("Tobin Bell");
-                break;
-            case "comedia":
-                alert("Adam Sandler");
-                break;
-            case "ciencia ficcion":
-                alert("Tom Holland");
-                break;
-            case "romance":
-                alert("Zac Efron");
-                break;
-            case "accion":
-                alert("Dwayne Johnson");
-                break;
-            case "drama":
-                alert("Michael Corleone");
-                break;
-            case "suspenso":
-                alert("Leonardo DiCaprio");
-                break;
-            case "fantasia":
-                alert("Benedict Cumberbatch");
-                break;
-            case "musicales":
-                alert("Ryan Gosling");
-                break;
-            default:
-                alert("Ingrese un género válido.")
-                break;
+    const ventas = new Compra(carrito)
+    alert("El total de tu compra es de: $ " + ventas.obtenerTotalCarrito())
+    let respuesta = confirm("Deseas confimar tu pago?")
+    if (respuesta === true) {
+        alert("Felicidades! Tu compra ha sido confirmada!\nMuchas gracias por confiar en nuestros productos💙")
+        carrito.length = 0
+    }
+}
+
+function comprarProductos() {
+    let id = prompt("Hola! Bienvenido a La Roche Posay. Qué producto deseas comprar?\nIngrese su id correspondiente😁")
+        if (!parseInt(id)) {
+            alert("Error en el id ingresado, el número no existe.")
+            let respuesta = confirm("Deseas intentar de nuevo?")
+                if (respuesta === true) {
+                    comprar()
+                }
+                return
         }
-        genero = prompt("Ingrese otro género favorito para más recomendaciones!").toLowerCase().trim();
+    let producto = buscar(id)
+        if (producto === undefined) {
+            alert("Error en el id ingresado, el número no existe.")
+            let respuesta = confirm("Deseas intentar de nuevo?")
+                if (respuesta === true) {
+                    comprarProductos()
+                }
+                return
+        }
+        alert(producto.nombre + ' se encuentra en stock💙 y cuesta: $' + producto.importe + ' y ya ha sido agregado al carrito.')
+        carrito.push(producto)
+
+        let seguir = confirm("Desea agregar más productos al carrito?")
+        if (seguir === true) {
+        comprarProductos();
+        } else {
+        let fin = confirm("Perfecto!😁 Desea ver el total de su compra?\n(Se agregaran $450 del costo de servicio.)")
+        finalizarCompra();
     }
 }
