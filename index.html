@@ -1,98 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style/estilos.css">
-    <script defer src="js/variables.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script defer src="js/dom.js"></script>
     <script defer src="js/main.js"></script>
     <script defer src="js/clases.js"></script>
     <title>La Roche Posay</title>
 </head>
+
 <body>
 
     <header>
-        <div class="navbar">
-            <nav>
-                <h1>La Roche Posay</h1>
-                <ul>
-                    <li><a href="#">HOME</a></li>
-                    <li><a href="#">PRODUCTS</a></li>
-                    <li><a href="#">RESEÑAS</a></li>
-                    <li><a href="#">CASOS REALES</a></li>
-                    <li><a href="#">ABOUT US</a></li>
-                </ul>
-            </nav>
+        <div class="logo">
+            <img src="images/logo.jpg" alt="Logo La Roche-Posay">
         </div>
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#favorites">FAVORITES</a></li>
+                <li><a href="#spotscan">SPOTSCAN</a></li>
+                <li><a href="products.html">OUR PRODUCTS</a></li>
+                <li><a href="#find">BETTER FOR YOU</a></li>
+            </ul>
+        </nav>
     </header>
 
 
-    <div class="intro">
-        <div class="title-intro">
-            <h2>Our Products</h2>
-            <button class= "btn" onclick="comprarProductos()">COMPRAR</button>
+    <div class="container-principal" id="home">
+        <div class="content-principal">
+            <h1>BETTER LIFE FOR<br>SENSITIVE SKIN.</h1>
+            <a class="button-principal" href="products.html">SHOP ALL</a>
         </div>
     </div>
 
 
-    <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <h3 class="card-title">Limpiador Facial || ID: 1234</h3>
-                <p class="card-parraf">Lipikar Gel Lavant limpia suavemente el rostro y el cuerpo. Calma y protege la piel reseca y sensible todos los días.</p>
+    <section id="favorites">
+        <h2>THE BEST OF THE MONTH</h2>
+        <p class="h2">THE FAVORITES OF OUR PUBLIC. THE FAVORITES OF OUR COMMUNITY.</p>
+        <div class="card-container">
+            <div class="card">
+                <div class="image-container">
+                    <div class="image-front1"></div>
+                    <div class="image-back1"></div>
+                </div>
+                <h3>HYALU B5 SERUM</h3>
+                <p>Replenish & replump</p>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <div class="card-body">
-                <h3 class="card-title">Crema Hidratante || ID: 5678</h3>
-                <p class="card-parraf">Es un producto completo con eficacia anti imperfecciones reforzada, que ayuda a aclarar rápidamente las manchas existentes.</p>
+            <div class="card">
+                <div class="image-container">
+                    <div class="image-front2"></div>
+                    <div class="image-back2"></div>
+                </div>
+                <h3>VITAMIN C SERUM</h3>
+                <p>Even skin tone & refine</p>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <div class="card-body">
-                <h3 class="card-title">Agua Micelar || ID: 3456</h3>
-                <p class="card-parraf">Es un limpiador facial formulado para piel grasa, con tendencia a las imperfecciones. Enriquecida con Agua Termal de La Roche-Posay.</p>
+            <div class="card">
+                <div class="image-container">
+                    <div class="image-front3"></div>
+                    <div class="image-back3"></div>
+                </div>
+                <h3>RETINOL B3 SERUM</h3>
+                <p>Smooth & renew</p>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
             </div>
-        </div>
 
-        <div class="card">
-            <div class="card-body">
-                <h3 class="card-title">Desmaquillante || ID: 9012</h3>
-                <p class="card-parraf">Desmaquillante y limpiador facial. Se puede aclarar o retirar con un algodón o tisú. Ayuda a prevenir las manchas en la piel.</p>
+            <div class="card">
+                <div class="image-container">
+                    <div class="image-front4"></div>
+                    <div class="image-back4"></div>
+                </div>
+                <h3>GLYCOLIC B5 SERUM</h3>
+                <p>Exfoliate & brighten</p>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="card">
-            <div class="card-body">
-                <h3 class="card-title">Protector Solar || ID: 7890</h3>
-                <p class="card-parraf">Es un protector solar facial que ofrece la más alta protección de rayos UVB, UVA e incluso UVA ultra-largos* (los más dañinos del espectro solar).</p>
-            </div>
-        </div>
 
-        <div class="card">
-            <div class="card-body">
-                <h3 class="card-title">Tonico || ID: 6678</h3>
-                <p class="card-parraf">Gel suave y muy refrescante que limpia y calma la piel sensible con tendencia al enrojecimiento.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-body">
-                <h3 class="card-title">Exfoliante Facial || ID: 5674</h3>
-                <p class="card-parraf">Formulado con tierra de diatomeas micronizadas, el Exfoliante Ultra Fino elimina suavemente las células muertas mientras respeta el equilibrio fisiológico de la piel.</p>
-            </div>
-        </div>
-
-        <div class="card">
-            <div class="card-body">
-                <h3 class="card-title">Serum Facial || ID: 4456</h3>
-                <p class="card-parraf">La primera solución dermatocosmética de La Roche-Posay que repara y rellena de inmediato y reduce significativamente las arrugas.</p>
-            </div>
-        </div>
+    <div class="container-spotscan" id="spotscan">
+        <p class="textprincipal">EFFACLAR SPOTSCAN</p>
+        <p class="textsecundario">An artificial intelligence powered skin diagnostic tool. Combines La Roche-Posay dermatological expertise with the best artificial intelligence technologies. Uses the analysis of 6,000 scientific images of men and women with different skin types and different levels of acne severity.</p>
     </div>
+
+
+    <section id="find">
+        <p class="section3">FIND A MOISTURIZER</p>
+        <p class="sectionp3">FOR YOUR SKIN TYPE</p>
+        <div class="card-container">
+            <div class="card">
+                <div class="image-container2">
+                    <div class="image-frontUno"></div>
+                    <div class="image-backUno"></div>
+                </div>
+                <p class="title-card">DRY</p>
+                <p>Toleriane double repair face moisturizer</p>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-container2">
+                    <div class="image-frontDos"></div>
+                    <div class="image-backDos"></div>
+                </div>
+                <p class="title-card">OILY</p>
+                <p>Toleriane double repair matte</p>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-container2">
+                    <div class="image-frontTres"></div>
+                    <div class="image-backTres"></div>
+                </div>
+                <p class="title-card">SENSITIVE</p>
+                <p>Toleriane ultra moisturizing cream</p>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="image-container2">
+                    <div class="image-frontCuatro"></div>
+                    <div class="image-backCuatro"></div>
+                </div>
+                <p class="title-card">ACNE PRONE</p>
+                <p>Effaclar mat mattifying moisturizer</p>
+                <div class="star">
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                    <i class="fa fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer>
+        <div class="logofooter">
+            <img src="images/footerimg.png" alt="Logo de la empresa">
+        </div>
+        <div class="seccionesfooter">
+            <ul class="ulfooter">
+                <li class="lifooter"><a class="afooter" href="#home">HOME</a></li>
+                <li class="lifooter"><a class="afooter" href="#favorites">FAVORITES</a></li>
+                <li class="lifooter"><a class="afooter" href="#spotscan">SPOTSCAN</a></li>
+                <li class="lifooter"><a class="afooter" href="products.html">PRODUCTS</a></li>
+                <li class="lifooter"><a class="afooter" href="#find">BETTER FOR YOU</a></li>
+            </ul>
+        </div>
+        <div class="copy">
+            <p class="copyright">&copy; 2023 La Roche Posay. All Rights Reserved.</p>
+        </div>
+    </footer>
+
 
 </body>
+
 </html>

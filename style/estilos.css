@@ -1,96 +1,666 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;500;600;700;800&display=swap');
 
 * {
     padding: 0%;
     margin: 0%;
 }
 
-.navbar{
-    position: relative;
-}
-
-nav{
+/* BARRA NAVEGACION  */
+header {
     display: flex;
-    width: 84%;
-    margin: auto;
-    padding: 20px 0;
-    align-items: center;
     justify-content: space-between;
-}
-
-h1{
-    font-family: 'Poppins', sans-serif;
-    font-weight: 700;
-}
-
-nav ul li{
-    display: inline-block;
-    list-style: none;
-    margin: 10px 20px;
-}
-
-nav ul li a{
-    text-decoration: none;
-    color: black;
-    font-family: 'Poppins', sans-serif;
-    font-weight: 600;
-}
-
-nav ul li a:hover{
-    color: rgb(86, 86, 244);
-}
-
-.intro{
-    font-family: 'Poppins', sans-serif;
-    margin: 5px;
-}
-
-.title-intro{
-    margin-left: 40px;
-    margin-bottom: 3px;
-    font-weight: 400;
-}
-
-.btn{
-    margin-bottom: 30px;
-    background-color: rgb(66, 66, 248);
-    color: white;
-    font-family: 'Poppins', sans-serif;
-}
-
-.container{
-    font-family: 'Poppins', sans-serif;
-    display: flex;
     align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    padding: 20px;
+    background-color: #fbfbfb;
+    color: #000000;
 }
 
-.card{
+.logo img {
+    height: 40px;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav li a {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+    color: #070000;
+}
+
+nav li a:hover {
+    text-decoration: underline;
+    color: rgb(132, 184, 250);
+}
+
+.busqueda input {
+    font-family: 'Montserrat', sans-serif;
+    border: 1px solid black;
+    padding: 5px;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.busqueda .button-search {
+    background-color: #fff;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.busqueda .button-search i {
+    color: #000000;
+}
+
+/* CONTENEDOR PRINCIPAL */
+.container-principal {
+    background-image: url('https://blogdemaquillaje.com/wp-content/uploads/sites/4/2013/09/LS-120604-Substiane02_0324-vers-03.jpg');
+    background-size: cover;
+    height: 500px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.content-principal {
+    margin-left: 50px;
+    color: white;
+    text-shadow: 1px 1px 1px black;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 48px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.button-principal {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+
+/* SECCION SERUMS */
+h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 50px;
+}
+
+.h2 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-size: 18px;
+    font-weight: 100;
+    margin-bottom: 30px;
+}
+
+.card-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.card {
+    position: relative;
+    width: 20%;
+    margin: 10px;
+    text-align: center;
+}
+
+h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+p {
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.star {
+    font-size: 15px;
+    color: rgb(147, 191, 248);
+    margin-top: 5px;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.image-front1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.laroche-posay.com.ar/-/media/project/loreal/brand-sites/lrp/america/latam/products/hyalu-b5/anti-aging-hyalu-b5-serum/larocheposay-product-antiaging-hyalub5-serum-30ml-3337875583626-fss-1-front.png');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.image-back1 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.laroche-posay.com.ar/-/media/project/loreal/brand-sites/lrp/america/latam/products/hyalu-b5/anti-aging-hyalu-b5-serum/la-roche-posay-productpage-anti-aging-hyalu-b5-serum-30ml-3337875583626-back.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+    transform: scale(0);
+}
+
+.image-container:hover .image-front1 {
+    transform: scale(0);
+}
+
+.image-container:hover .image-back1 {
+    transform: scale(1);
+}
+
+.image-front2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.laroche-posay.com.ar/-/media/project/loreal/brand-sites/lrp/america/latam/products/retinol/b3-serum/larocheposay-product-antiaging-retinol-b3serum-30ml-3337878694469-fss-1.png');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.image-back2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.laroche-posay.com.ar/-/media/project/loreal/brand-sites/lrp/america/latam/products/retinol/b3-serum/larocheposay-product-antiaging-retinol-b3serum-30ml-3337878694469-bss-1.png');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+    transform: scale(0);
+}
+
+.image-container:hover .image-front2 {
+    transform: scale(0);
+}
+
+.image-container:hover .image-back2 {
+    transform: scale(1);
+}
+
+.image-front3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://media.vogue.es/photos/622697ad0afcdc50eb9a4731/1:1/w_8192,h_8192,c_limit/Packshot_con_sombra_texto_spanish.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.image-back3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.costco.com.mx/medias/sys_master/products/hd5/h1e/118540109479966.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+    transform: scale(0);
+}
+
+.image-container:hover .image-front3 {
+    transform: scale(0);
+}
+
+.image-container:hover .image-back3 {
+    transform: scale(1);
+}
+
+.image-front4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.laroche-posay.com.ar/-/media/project/loreal/brand-sites/lrp/america/latam/products/redermic/c10/la-roche-posay-productpage-anti-aging-pure-vitamin-c10-30ml-3337875660570-front.png');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.image-back4 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.laroche-posay.com.ar/-/media/project/loreal/brand-sites/lrp/america/latam/products/redermic/c10/la-roche-posay-productpage-anti-aging-pure-vitamin-c10-30ml-3337875660570-open.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+    transform: scale(0);
+}
+
+.image-container:hover .image-front4 {
+    transform: scale(0);
+}
+
+.image-container:hover .image-back4 {
+    transform: scale(1);
+}
+
+
+/* SECCION SPOTSCAN */
+.container-spotscan {
+    background-image: url('https://www.laroche-posay.com.ar/-/media/project/loreal/brand-sites/lrp/america/latam/lrp-model-visuals/spotscan/landing-page/lrp-com-spotscan-banner-model-visual-2-2-rigtsend-2022-09-30.jpg?cx=0.61&cy=0.63&cw=1440&ch=450&hash=2DA52F61E65A445AD1E66799EA2CC403D886E674');
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+}
+
+.textprincipal {
+    position: absolute;
+    padding-left: 60px;
+    padding-top: 70px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: black;
+}
+
+.textsecundario {
+    position: absolute;
+    padding-left: 60px;
+    padding-top: 100px;
+    margin-right: 850px;
+    margin-top: 20px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: lighter;
+    color: black;
+}
+
+
+/* SECCION PRODUCTOS */
+.headerProducts {
+    text-align: left;
+    margin-left: 112px;
+}
+
+h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    color: black;
+    margin-top: 50px;
+    line-height: 30px;
+}
+
+.h5 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 18px;
+    color: black;
+    margin-bottom: 50px;
+}
+
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+}
+
+.product {
+    position: relative;
+    background-color: white;
+    width: 225px;
+    height: 360px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, .1);
     display: flex;
     flex-direction: column;
-    flex-basis: 300px;
-    flex-shrink: 0;
-    flex-grow: 0;
-    max-width: 100%;
-    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.15);
+    justify-content: space-between;
+    padding: 20px 20px 40px;
     border-radius: 10px;
+    transition: .3s;
+}
+
+.product:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, .2);
+}
+
+.imageProduct {
+    display: grid;
+    place-items: center;
+}
+
+.imageProduct img {
+    width: 170px;
+}
+
+.nameProduct {
+    display: flex;
+    justify-content: space-between;
+    line-height: 1px;
+}
+
+h6 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: black;
+    margin-top: 20px;
+}
+
+.priceProduct {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: black;
+    margin-top: 20px;
+}
+
+.parrafoProduct {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 100;
+    font-size: 13px;
+    color: black;
+    line-height: 20px;
+}
+
+.stars {
+    font-size: 1em;
+    color: rgb(249, 249, 115);
+}
+
+.shop {
+    position: absolute;
+    bottom: 30px;
+    right: 20px;
+}
+
+.shop .buttonProduct {
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid black;
+    background-color: rgb(255, 255, 255);
+    color: #000000;
+    font-size: 10px;
+    cursor: pointer;
+    transition: .5s;
+}
+
+.shop .buttonProduct:hover {
+    transform: scale(1.1);
+}
+
+/* SECCION MOISTURIZER */
+.section3 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-size: 22px;
+    font-weight: 500;
+    margin-top: 50px;
+}
+
+.sectionp3 {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-size: 18px;
+    font-weight: 100;
+    margin-bottom: 30px;
+}
+
+.title-card {
+    font-family: 'Montserrat', sans-serif;
+    color: black;
+    font-size: 16px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.image-container2 {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 5px;
     overflow: hidden;
-    margin: 1rem;
-    background-color: rgb(251, 250, 248);
 }
 
-.card-body{
-    padding: 1.5rem;
+.image-frontUno {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.laroche-posay.com.ar/-/media/project/loreal/brand-sites/lrp/america/latam/products/toleriane/ultra/toleriane-ultra-creme-fond-blanc-product-packshot-cmjn-bd.png');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
 }
 
-.card-title{
-    font-size: 1.15rem;
-    line-height: 1.33;
-    font-weight: 700;
+.image-backUno {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.laroche-posay.com.ar/-/media/project/loreal/brand-sites/lrp/america/latam/products/toleriane/ultra/la-roche-posay-productpage-sensitive-allergic-toleriane-ultra-40ml-3337872412486-back.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+    transform: scale(0);
 }
 
-.card-parraf{
-    margin-top: 0.75rem;
-    line-height: 1.5;
+.image-container2:hover .image-frontUno {
+    transform: scale(0);
+}
+
+.image-container2:hover .image-backUno {
+    transform: scale(1);
+}
+
+.image-frontDos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.laroche-posay.com.ar/-/media/project/loreal/brand-sites/lrp/america/latam/products/rosaliac/cc-cream/la-roche-posay-productpage-face-care-rosaliac-cc-cream-50ml-3337872414213-front.png');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.image-backDos {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.laroche-posay.com.ar/-/media/project/loreal/brand-sites/lrp/america/latam/products/rosaliac/cc-cream/la-roche-posay-productpage-face-care-rosaliac-cc-cream-50ml-3337872414213-back.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+    transform: scale(0);
+}
+
+.image-container2:hover .image-frontDos {
+    transform: scale(0);
+}
+
+.image-container2:hover .image-backDos {
+    transform: scale(1);
+}
+
+.image-frontTres {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.laroche-posay.com.ar/-/media/project/loreal/brand-sites/lrp/america/latam/products/toleriane/sensitive-riche/la-roche-posay-productpage-sensitive-allergic-toleriane-riche-40ml-3433422405301-front.png');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.image-backTres {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.laroche-posay.com.ar/-/media/project/loreal/brand-sites/lrp/america/latam/products/toleriane/sensitive-riche/la-roche-posay-productpage-sensitive-allergic-toleriane-riche-40ml-3433422405301-back.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+    transform: scale(0);
+}
+
+.image-container2:hover .image-frontTres {
+    transform: scale(0);
+}
+
+.image-container2:hover .image-backTres {
+    transform: scale(1);
+}
+
+.image-frontCuatro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.laroche-posay.com.ar/-/media/project/loreal/brand-sites/lrp/america/latam/products/lipikar/lipikar-stick-ap-plus/la-roche-posay-body-care-lipikar-stick-ap-15ml-irritation-scratching-eczema-000-3337875566254-front.png');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+}
+
+.image-backCuatro {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://www.laroche-posay.com.ar/-/media/project/loreal/brand-sites/lrp/america/latam/products/lipikar/lipikar-stick-ap-plus/la-roche-posay-productpage-eczema-lipikar-stick-ap-15ml-3337875566254-back.jpg');
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.5s ease;
+    transform: scale(0);
+}
+
+.image-container2:hover .image-frontCuatro {
+    transform: scale(0);
+}
+
+.image-container2:hover .image-backCuatro {
+    transform: scale(1);
+}
+
+
+/* FOOTER */
+footer {
+    background-color: rgb(206, 222, 242);
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    margin-top: 15px;
+}
+
+.logofooter img {
+    height: 65px;
+    margin-left: 10px;
+}
+
+.seccionesfooter .ulfooter {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+}
+
+.seccionesfooter .lifooter {
+    margin: 0 10px;
+}
+
+.seccionesfooter .afooter {
+    color: white;
+    text-decoration: none;
+}
+
+.copy {
+    text-align: center;
+}
+
+.copyright {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 14px;
+}
+
+
+/* BOTON FINALIZAR COMPRA EN PAGINA "OUR PRODUCTS" */
+.buttonFinalizar {
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 1px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgb(255, 255, 255);
+    color: rgb(7, 0, 0);
+    border: 1px solid black;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    margin-left: 60px;
 }
