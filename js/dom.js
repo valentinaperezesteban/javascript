@@ -1,21 +1,25 @@
 // VARIABLES
-const servicePage = 450
-const carrito = []
-const productos = []
-const URL = 'js/productos.json'
+const servicePage = 450;
+const carrito = [];
+const productos = [];
+const URL = 'js/productos.json';
 
-const products = document.querySelector(".products")
-const inputSearch = document.getElementById("inputSearch")
+const products = document.querySelector(".products");
+const inputSearch = document.getElementById("inputSearch");
+const carritoContainer = document.querySelector(".carrito-container");
+const carritoItems = document.querySelector(".carrito-items");
+const carritoTotal = document.querySelector(".carrito-total");
 
 fetch(URL)
-        .then((response)=> response.json())
-        .then((data)=> productos.push(...data))
-        .then(()=> cargarCard(productos))
-
+    .then((response) => response.json())
+    .then((data) => productos.push(...data))
+    .then(() => cargarCard(productos));
 
 function buscarProductos(valor) {
     return new Promise((resolve, reject) => {
-        let resultado = productos.filter(producto => producto.nombre.toUpperCase().includes(valor.toUpperCase()));
+        let resultado = productos.filter((producto) =>
+            producto.nombre.toUpperCase().includes(valor.toUpperCase())
+        );
         if (resultado.length > 0) {
             cargarCard(resultado);
             resolve(resultado);
@@ -24,7 +28,7 @@ function buscarProductos(valor) {
                 icon: 'error',
                 title: 'Oops...',
                 text: 'No results found.',
-                footer: '<a href="">It seems that this product does not exist. Please try another name.</a>'
+                footer: '<a href="">It seems that this product does not exist. Please try another name.</a>',
             });
             reject('No se encontraron resultados.');
         }
@@ -32,15 +36,15 @@ function buscarProductos(valor) {
 }
 
 buscarProductos()
-    .then(resultado => {
+    .then((resultado) => {
         cargarCard(resultado);
     })
-    .catch(error => {
+    .catch((error) => {
         Swal.fire({
             icon: 'error',
             title: 'Oops...',
             text: 'No results found.',
-            footer: '<a href="">It seems that this product does not exist. Please try another name.</a>'
+            footer: '<a href="">It seems that this product does not exist. Please try another name.</a>',
         });
         console.error(error);
     });
@@ -65,59 +69,78 @@ function retornarCard(producto) {
                 <div class="shop">
                     <button class="buttonProduct" id="${producto.id}">SHOP NOW</button>
                 </div>
-            </div>`
+            </div>`;
 }
 
 function cargarCard(array) {
-    products.innerHTML = ""
+    products.innerHTML = "";
     array.forEach((producto) => {
-        products.innerHTML += retornarCard(producto)
-    })
-    activarBotones()
+        products.innerHTML += retornarCard(producto);
+    });
+    activarBotones();
 }
 
 inputSearch.addEventListener("search", (e) => {
-    buscarProductos(e.target.value)
-})
+    buscarProductos(e.target.value);
+});
 
 function activarBotones() {
-    const botones = document.querySelectorAll("button.buttonProduct")
+    const botones = document.querySelectorAll("button.buttonProduct");
     for (const boton of botones) {
         boton.addEventListener("click", () => {
-            let resultadoproducto = productos.find(producto => producto.id === parseInt(boton.id))
-            carrito.push(resultadoproducto)
-            guardarCarrito()
-        })
+            let resultadoproducto = productos.find(
+                (producto) => producto.id === parseInt(boton.id)
+            );
+            carrito.push(resultadoproducto);
+            guardarCarrito();
+            mostrarCarrito();
+        });
     }
 }
 
 function guardarCarrito() {
-    localStorage.setItem("carritoProductos", JSON.stringify(carrito))
+    localStorage.setItem("carritoProductos", JSON.stringify(carrito));
 }
 
 function recuperarCarrito() {
-    return JSON.parse(localStorage.getItem("carritoProductos")) || []
+    return JSON.parse(localStorage.getItem("carritoProductos")) || [];
 }
 
+function mostrarCarrito() {
+    carritoItems.innerHTML = "";
+    carritoTotal.textContent = "";
 
-recuperarCarrito()
+    carrito.forEach((producto) => {
+        const productoElement = document.createElement("div");
+        productoElement.classList.add("carrito-item");
 
-//FUNCION PARA TERMINAR DE COMPRAR E IR A PAGAR
-function finalizarCompra() {
-    if (carrito.length === 0) {
-        Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'The cart is empty.',
-            footer: '<a href="">You most add products to finalize the purchase.</a>'
-        })
-        return
-    }
-    const ventas = new Compra(carrito)
-    alert('Your total purchase is: $' + ventas.obtenerTotalCarrito())
-    let respuesta = confirm("Do you want to confirm your payment?\n$450 of the service cost was added.")
-    if (respuesta === true) {
-        Swal.fire('Congratulations! Your purchase has been confirmed!\nThank you very much for trusting in our products💙')
-        carrito.length = 0
-    }
+        productoElement.innerHTML = `
+      <p class="carrito-nombre">${producto.nombre}</p>
+      <p class="carrito-precio">${producto.importe}</p>
+      <button class="carrito-eliminar" data-id="${producto.id}">Remove</button>
+    `;
+
+        carritoItems.appendChild(productoElement);
+    });
+
+    const total = carrito.reduce(
+        (accumulator, producto) => accumulator + producto.importe,
+        0
+    );
+    carritoTotal.textContent = `Total: $${total}`;
 }
+
+carritoContainer.addEventListener("click", (e) => {
+    if (e.target.classList.contains("carrito-eliminar")) {
+        const id = parseInt(e.target.dataset.id);
+        carrito.splice(
+            carrito.findIndex((producto) => producto.id === id),
+            1
+        );
+        guardarCarrito();
+        mostrarCarrito();
+    }
+});
+
+recuperarCarrito();
+mostrarCarrito();

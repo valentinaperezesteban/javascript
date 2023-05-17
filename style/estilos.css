@@ -659,8 +659,33 @@ footer {
     font-family: 'Montserrat', sans-serif;
     background-color: rgb(255, 255, 255);
     color: rgb(7, 0, 0);
-    border: 1px solid black;
+    border: 1px solid rgb(147, 191, 248);
     margin-top: 40px;
     margin-bottom: 40px;
-    margin-left: 60px;
+    margin-left: 620px;
+}
+
+/* CARRITO DE COMPRAS */
+.carrito-container {
+    border: 1px solid rgb(147, 191, 248);
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    max-width: 300px;
+    margin: 0 auto;
+    margin-top: 60px;
+}
+
+.carrito-items {
+    margin-bottom: 10px;
+}
+
+.carrito-total {
+    font-weight: bold;
+    text-align: right;
+}
+
+.carritop {
+    font-family: 'Montserrat', sans-serif;
+    color: black;
 }
